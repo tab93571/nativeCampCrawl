@@ -22,7 +22,7 @@ public class HttpSendUtil {
     }
 
 
-    private static final String USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36";
+    private static final String USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36";
 
 
 
@@ -34,8 +34,8 @@ public class HttpSendUtil {
 
             con.setRequestMethod("POST");
             con.setRequestProperty("User-Agent", USER_AGENT);
-            con.setRequestProperty("accept", "*/*");
-            con.setRequestProperty("connection", "keep-alive");
+//            con.setRequestProperty("accept", "*/*");
+//            con.setRequestProperty("connection", "keep-alive");
 
             con.setRequestProperty("Cookie",cookie);
 
