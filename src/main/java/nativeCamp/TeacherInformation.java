@@ -6,7 +6,7 @@ import java.util.Map;
 public enum TeacherInformation {
 
 
-    JELENA(39784,"Jelena","I like her" ),
+    JELENA(39784,"Jelena","dentist nice to talk to" ),
     ARIEL(17662,"Ariel","young girl from Albania"),
     SINDI(20307,"Sindi","Albania uni student"),
     BEE(27935,"Bee","Filipino medical student"),
@@ -18,6 +18,8 @@ public enum TeacherInformation {
     GRAACIOUS(41743,"Graacious","black pretty teacher"),
     ZOKA(44398,"Zoka","Serbian not suitable for daily news"),
     SIMS(19070,"Sims","South African with perfect pronunciation "),
+    BARBIE(42109,"Barbie","Filipino teacher,nice to talk to "),
+    YANNA(44435,"Yanna","Filipino teacher,nice to talk to and cute "),
     KARL(24381,"Karl","Filipino works in the bank");
 
     private static Map<Integer,String> teacherMap = new HashMap();

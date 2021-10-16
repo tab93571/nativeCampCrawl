@@ -24,15 +24,20 @@ public class GetMyPageTeacher {
 
     private static String  condition =conditionMyCollection;
 
-    private static boolean mustUseCertainID = false;
+    private static boolean mustUseCertainID = true;
+
+    private static boolean mustInTeacherInformation = false;
 
 
     private static Integer certainID = TeacherInformation.JELENA.getTeacherID();
 
-    private static long durationTime = 900l;
+    private static long durationTime = 500l;
 
-    private static String cookie = "_ga=GA1.2.1518765863.1622295376; _gid=GA1.2.368324697.1622295376; _ts_yjad=1622295375837; __lt__cid=81f0e5cc-0ab3-44ca-8798-f71a0d19b24a; _gcl_au=1.1.1244101971.1622337117; _fbc=fb.1.1622337117638.IwAR32LrZ0BJmCbG0vtbU5KpHQ-QyDaGSCximIBGXFq2HQP2jm3oXFlddH96A; _fbp=fb.1.1622337117640.1245245735; userInstagramModalAfterLesson_730511=no; change_filter=0; previous_filter=reserved; CakeCookie[em]=Q2FrZQ%3D%3D.XkfXaprKdWQ70vbEbYjzcMrX9MJ%2BUx8t%2BsofIssa%2Fcc%3D; rmStore5987=tmid:5987; 14649.vst=%7B%22s%22%3A%2276d9a57d-a407-458d-bd7b-68c64653c186%22%2C%22t%22%3A%22new%22%2C%22lu%22%3A1624881018169%2C%22lv%22%3A1624881018169%2C%22lp%22%3A0%7D; viewMode=pc; CakeCookie[localizeDir]=Q2FrZQ%3D%3D.TGSLXYU%3D; timezone_dialog_show=off; searchTeacherForm[searchData]=%7B%22keywordText%22%3A%22%22%2C%22teacheNameText%22%3A%22%22%2C%22statusRadio%22%3A%22possible%22%2C%22genderRadio%22%3A%220%22%2C%22ageRadio%22%3A%220%22%2C%22sortRadio%22%3A%22evaluation_points%22%2C%22moreData%22%3A%22%22%2C%22limitData%22%3A%222%22%2C%22limitHistory%22%3A%22%22%2C%22limitCount%22%3A%22%22%2C%22badgeIds%22%3A%22preset%22%2C%22searchFavorite%22%3A%22on%22%2C%22textbookRadioVal%22%3A%223%22%2C%22lesson5minRadio%22%3A%22show%22%2C%22coinSelectStart%22%3A%220%22%2C%22coinSelectEnd%22%3A%221000%22%2C%22localizeDir%22%3A%22zh-tw%22%7D; CakeCookie[currency_cookie]=Q2FrZQ%3D%3D.fFz%2F; _gat=1; UUNID=tvnujck2ndp2pr4ecf2gkud172; stc116386=env:1627048887%7C20210823140127%7C20210723143346%7C4%7C1059099:20220723140346|uid:1622337117410.161233026.69100332.116386.970109828.:20220723140346|srchist:1059100%3A1626396795%3A20210816005315%7C1059099%3A1626396808%3A20210816005328%7C1059100%3A1627018911%3A20210823054151%7C1059099%3A1627018922%3A20210823054202%7C1059100%3A1627024925%3A20210823072205%7C1059099%3A1627025622%3A20210823073342%7C1059100%3A1627042506%3A20210823121506%7C1059099%3A1627043141%3A20210823122541%7C1059100%3A1627048876%3A20210823140116%7C1059099%3A1627048887%3A20210823140127:20220723140346|nsc:1:20220530012039|tsa:0:20210723143346";
+    private static String cookie = "_ga=GA1.2.1518765863.1622295376; _ts_yjad=1622295375837; __lt__cid=81f0e5cc-0ab3-44ca-8798-f71a0d19b24a; _fbc=fb.1.1622337117638.IwAR32LrZ0BJmCbG0vtbU5KpHQ-QyDaGSCximIBGXFq2HQP2jm3oXFlddH96A; _fbp=fb.1.1622337117640.1245245735; userInstagramModalAfterLesson_730511=no; change_filter=0; previous_filter=reserved; CakeCookie[em]=Q2FrZQ%3D%3D.XkfXaprKdWQ70vbEbYjzcMrX9MJ%2BUx8t%2BsofIssa%2Fcc%3D; rmStore5987=tmid:5987; dable_uid=17475158.1627477632961; _gcl_au=1.1.1181145002.1630143881; viewMode=pc; CakeCookie[localizeDir]=Q2FrZQ%3D%3D.TGSLXYU%3D; _gid=GA1.2.1214770836.1634305970; _gat=1; UUNID=vb6o81s99rdvrsrbk5b5nj2es7; stc116386=env:1634305999%7C20211115135319%7C20211015142319%7C1%7C1059099:20221015135319|uid:1622337117410.161233026.69100332.116386.970109828.:20221015135319|srchist:1059100%3A1632314100%3A20211023123500%7C1059099%3A1632316393%3A20211023131313%7C1059100%3A1632921793%3A20211030132313%7C1059099%3A1632921913%3A20211030132513%7C1059100%3A1633264252%3A20211103123052%7C1059099%3A1633264838%3A20211103124038%7C1059100%3A1633603103%3A20211107103823%7C1059099%3A1633603115%3A20211107103835%7C1059100%3A1634305970%3A20211115135250%7C1059099%3A1634305999%3A20211115135319:20221015135319|nsc:1:20220530012039|tsa:0:20211015142319";
 
+
+
+    private static  String user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36";
 
 
 
@@ -53,7 +58,7 @@ public class GetMyPageTeacher {
 
         HttpSendUtil httpSendUtil = new HttpSendUtil();
 
-        Map<Integer,String> teacherMap = TeacherInformation.getTeacherMap();
+        Map<Integer,String> favouriteTeachersMap = TeacherInformation.getTeacherMap();
 
         long times =0;
 
@@ -61,7 +66,7 @@ public class GetMyPageTeacher {
             long startTime=System.currentTimeMillis();
             try {
 
-                String response = httpSendUtil.sendPOST(url,cookie,condition);
+                String response = httpSendUtil.sendPOST(url,cookie,condition,user_agent);
                 long gotResponseTime=System.currentTimeMillis();
 
                 System.out.println("get response耗時："+(gotResponseTime-startTime)+"ms");
@@ -74,7 +79,7 @@ public class GetMyPageTeacher {
 
                 if(teacherIDSet != null && teacherIDSet.size()>0){
 
-                    Integer teacherID = teacherSort(teacherIDSet,teacherMap, mustUseCertainID);
+                    Integer teacherID = teacherSort(teacherIDSet,favouriteTeachersMap, mustUseCertainID);
                     if(null!= teacherID){
 
                         if(null == teacherIDTimesMap.get(teacherID) || (times - teacherIDTimesMap.get(teacherID)>sendTGDuration)){
@@ -82,6 +87,10 @@ public class GetMyPageTeacher {
                             java.awt.Toolkit.getDefaultToolkit().beep();
 //                            setTG(teacherURL+teacherID);
                             System.out.println("teacherID: "+teacherID+"   time:"+new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime()));
+                            java.awt.Toolkit.getDefaultToolkit().beep();
+                            if(favouriteTeachersMap.keySet().contains(teacherID)){
+                                break;
+                            }
 
                             teacherIDTimesMap.put(teacherID,times);}
                     }
@@ -100,7 +109,6 @@ public class GetMyPageTeacher {
             long finishOneLoopTimeAfterSleep=System.currentTimeMillis();
             System.out.println("一次迴圈時間："+(finishOneLoopTimeAfterSleep-startTime)+"ms");
 
-
             times++;
         }
 
@@ -109,27 +117,21 @@ public class GetMyPageTeacher {
     private static Integer teacherSort(Set<Integer>teacherIDSet,Map<Integer,String> teacherMap,Boolean mustUseCertainID){
         Set<Integer>favouriteTeacherSet = teacherMap.keySet();
 
-        if(teacherIDSet.contains(certainID)){ 
-            return certainID; 
-        }else{
-            //一定要用certainID
-            if(mustUseCertainID){
-                return null;
-            }
-        }
+        if(teacherIDSet.contains(certainID))return certainID;
+
+        //一定要用certainID
+        if(mustUseCertainID)return null;
 
         //find from the favourite
         for(Integer id:favouriteTeacherSet){
-            if(teacherIDSet.contains(id)){
-                return id;
-            }
-        }
-        //find the first
-        for(Integer id:teacherIDSet){
-            return id;
+            if(teacherIDSet.contains(id))return id;
         }
 
-        return null;
+        //假如一定要在teacherInformation中的老師的話就不會往下跑了
+        if(mustInTeacherInformation)return null;
+
+
+        return teacherIDSet.iterator().next();
     }
 
     private static void setTG(String message) throws TelegramApiException {

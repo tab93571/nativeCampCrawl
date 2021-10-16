@@ -21,19 +21,13 @@ public class HttpSendUtil {
 
     }
 
-
-    private static final String USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36";
-
-
-
-
-    public  String sendPOST(String url,String cookie,String searchCondition) throws IOException {
+    public  String sendPOST(String url,String cookie,String searchCondition,String userAgent) throws IOException {
 
             URL obj = new URL(url);
             HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 
             con.setRequestMethod("POST");
-            con.setRequestProperty("User-Agent", USER_AGENT);
+            con.setRequestProperty("User-Agent", userAgent);
 //            con.setRequestProperty("accept", "*/*");
 //            con.setRequestProperty("connection", "keep-alive");
 
