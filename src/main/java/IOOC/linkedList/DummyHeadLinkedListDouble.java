@@ -1,6 +1,6 @@
 package IOOC.linkedList;
 
-public class DummyHeadLinkedList<E> {
+public class DummyHeadLinkedListDouble<E> {
 
     private class Node{
         public E e;
@@ -28,7 +28,7 @@ public class DummyHeadLinkedList<E> {
     private Node dummyHead;
     private int size;
 
-    public DummyHeadLinkedList(){
+    public DummyHeadLinkedListDouble(){
         dummyHead = new Node(null,null);
         size = 0;
     }
@@ -161,7 +161,7 @@ public class DummyHeadLinkedList<E> {
 
     public static void main(String[] args) {
 
-        DummyHeadLinkedList<Integer> linkedList = new DummyHeadLinkedList<>();
+        DummyHeadLinkedListDouble<Integer> linkedList = new DummyHeadLinkedListDouble<>();
         for(int i = 0 ; i < 5 ; i ++){
             linkedList.addFirst(i);
             System.out.println(linkedList);

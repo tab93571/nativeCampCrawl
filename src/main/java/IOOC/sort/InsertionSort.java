@@ -20,7 +20,7 @@ public class InsertionSort {
         }
 
     }
-
+// 想想三種不同的logic
 
     /**
      * 原先的邏輯
@@ -34,7 +34,6 @@ public class InsertionSort {
             int count =0;
             E compare = arr[i];
             for(int j=i-1;j>=0;j--){
-
 
                 if(compare.compareTo(arr[j])<0){
                     SortingHelper.swap(arr,i-count,j);
