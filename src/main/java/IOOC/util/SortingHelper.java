@@ -1,5 +1,7 @@
 package IOOC.util;
 import IOOC.sort.InsertionSort;
+import IOOC.sort.MergeSort;
+import IOOC.sort.QuickSort;
 import IOOC.sort.SelectionSort;
 public class SortingHelper {
     private SortingHelper(){}
@@ -31,6 +33,27 @@ public class SortingHelper {
         }
         if(sortName.equals("InsertSortRevert")){
             InsertionSort.sortInReverseWay(arr);
+        }
+        if(sortName.equals("mergeSort")){
+            MergeSort.sort(arr);
+        }
+        if(sortName.equals("mergeSort2")){
+            MergeSort.sort2(arr);
+        }
+        if(sortName.equals("mergeSort3")){
+            MergeSort.sort3(arr);
+        }
+        if(sortName.equals("mergeSort4")){
+            MergeSort.sort4(arr);
+        }
+        if(sortName.equals("mergeSort4")){
+            MergeSort.sort4(arr);
+        }
+        if(sortName.equals("quickSort")){
+            QuickSort.sort(arr);
+        }
+        if(sortName.equals("quickSort2")){
+            QuickSort.sort2(arr);
         }
 
         long endTime = System.nanoTime();

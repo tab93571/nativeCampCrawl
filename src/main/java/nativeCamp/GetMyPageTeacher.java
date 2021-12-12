@@ -22,9 +22,9 @@ public class GetMyPageTeacher {
 
     //variable
 
-    private static String  condition =conditionMyCollection;
+    private static String  condition =conditionNativeSpeaker;
 
-    private static boolean mustUseCertainID = true;
+    private static boolean mustUseCertainID = false;
 
     private static boolean mustInTeacherInformation = false;
 
@@ -33,11 +33,14 @@ public class GetMyPageTeacher {
 
     private static long durationTime = 500l;
 
-    private static String cookie = "_ga=GA1.2.1518765863.1622295376; _ts_yjad=1622295375837; __lt__cid=81f0e5cc-0ab3-44ca-8798-f71a0d19b24a; userInstagramModalAfterLesson_730511=no; change_filter=0; CakeCookie[em]=Q2FrZQ%3D%3D.XkfXaprKdWQ70vbEbYjzcMrX9MJ%2BUx8t%2BsofIssa%2Fcc%3D; rmStore5987=tmid:5987; dable_uid=17475158.1627477632961; previous_pagi=1; previous_filter=reserved; _gcl_au=1.1.1418435093.1637924805; viewMode=pc; CakeCookie[localizeDir]=Q2FrZQ%3D%3D.TGSLXYU%3D; _gid=GA1.2.1019122137.1638440160; _gat=1; UUNID=p4u1ssn92s1ah25sr0evmnh929; stc116386=env:1638440184%7C20220102101624%7C20211202104624%7C1%7C1059099:20221202101624|uid:1622337117410.161233026.69100332.116386.970109828.:20221202101624|srchist:1059100%3A1636201778%3A20211207122938%7C1059099%3A1636201790%3A20211207122950%7C1059100%3A1636811859%3A20211214135739%7C1059099%3A1636811892%3A20211214135812%7C1059100%3A1637490556%3A20211222102916%7C1059099%3A1637490576%3A20211222102936%7C1059100%3A1637761965%3A20211225135245%7C1059099%3A1637761978%3A20211225135258%7C1059100%3A1638440159%3A20220102101559%7C1059099%3A1638440184%3A20220102101624:20221202101624|nsc:1:20220530012039|tsa:0:20211202104624";
-
+    private static String cookie = "_ga=GA1.2.1518765863.1622295376; _ts_yjad=1622295375837; __lt__cid=81f0e5cc-0ab3-44ca-8798-f71a0d19b24a; userInstagramModalAfterLesson_730511=no; change_filter=0; CakeCookie[em]=Q2FrZQ%3D%3D.XkfXaprKdWQ70vbEbYjzcMrX9MJ%2BUx8t%2BsofIssa%2Fcc%3D; rmStore5987=tmid:5987; dable_uid=17475158.1627477632961; previous_pagi=1; previous_filter=reserved; _gcl_au=1.1.1418435093.1637924805; viewMode=pc; CakeCookie[localizeDir]=Q2FrZQ%3D%3D.TGSLXYU%3D; _gid=GA1.2.1190655377.1638911376; searchTeacherForm[searchData]=%7B%22keywordText%22%3A%22%22%2C%22teacheNameText%22%3A%22%22%2C%22statusRadio%22%3A%22possible%22%2C%22genderRadio%22%3A%220%22%2C%22sortRadio%22%3A%22status%22%2C%22moreData%22%3A%22%22%2C%22limitData%22%3A%222%22%2C%22limitHistory%22%3A%22%22%2C%22limitCount%22%3A%22%22%2C%22badgeIds%22%3A%220%22%2C%22textbookRadioVal%22%3A%220%22%2C%22lesson5minRadio%22%3A%22show%22%2C%22coinSelectStart%22%3A%220%22%2C%22coinSelectEnd%22%3A%221000%22%2C%22localizeDir%22%3A%22zh-tw%22%7D; timezone_dialog_show=off; _gat=1; UUNID=flgvrr9hk76lv22uk9stib66ne; stc116386=env:1639057301%7C20220109134141%7C20211209141141%7C1%7C1059099:20221209134141|uid:1622337117410.161233026.69100332.116386.970109828.:20221209134141|srchist:1059100%3A1636811859%3A20211214135739%7C1059099%3A1636811892%3A20211214135812%7C1059100%3A1637490556%3A20211222102916%7C1059099%3A1637490576%3A20211222102936%7C1059100%3A1637761965%3A20211225135245%7C1059099%3A1637761978%3A20211225135258%7C1059100%3A1638440159%3A20220102101559%7C1059099%3A1638440184%3A20220102101624%7C1059100%3A1639057266%3A20220109134106%7C1059099%3A1639057301%3A20220109134141:20221209134141|nsc:1:20220530012039|tsa:0:20211209141141";
 
 
     private static  String user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36";
+
+
+
+
 
     //幾次後要再sendTG
     private static long sendTGDuration = 100;
@@ -71,7 +74,7 @@ public class GetMyPageTeacher {
                 if(null == response ){
                     continue;
                 }
-                Set<Integer>teacherIDSet = getTeacherIDSet(response);
+                Set<Integer>teacherIDSet = getTeacherIDSet(response,condition);
 
 
 
@@ -138,7 +141,8 @@ public class GetMyPageTeacher {
         tgBotLNNAUtil.execute(sendMessage);
     }
 
-    public static Set<Integer> getTeacherIDSet(String response){
+    public static Set<Integer> getTeacherIDSet(String response,String condition){
+
 
         Set<Integer> teacherIDSet = new HashSet();
         String[]array= response.split("https://nativecamp.net/zh-tw/waiting/detail/");
@@ -170,6 +174,21 @@ public class GetMyPageTeacher {
             }
             teacherIDSet.add(idInt);
             }
+
+        //若是母語師太廢就不上了，反正母語師也只抓第一個，所以就看第一個的評價就可以了
+
+        if(condition.equals(conditionNativeSpeaker) && !teacherIDSet.isEmpty()){
+
+            String[]pointArray = response.split("\"ユーザー評価\">");
+
+            String pointString = pointArray[1].substring(0,4);
+            Double point = Double.parseDouble(pointString);
+
+            if(point <4.87){
+                return null;
+            }
+
+        }
 
         return teacherIDSet;
     }
