@@ -7,21 +7,28 @@ public class QuickSort {
 
 
     public static void main(String[] args) {
-        Integer[] arr = {4,6,5,2,3,8,4,1};
-        QuickSort s = new QuickSort();
-        s.sort(arr);
-        for(Integer one : arr){
-            System.out.println(one);
-        }
-        int n = 1000000;
+//        Integer[] arr = {4,6,5,2,3,8,4,1};
+//        QuickSort s = new QuickSort();
+//        s.sort(arr);
+//        for(Integer one : arr){
+//            System.out.println(one);
+//        }
+        int n = 10000;
 
-        Integer [] arr3 = ArrayGenerator.generateRandomArray(n,n);
-        SortingHelper.sortTest("quickSort",arr3);
+//        Integer [] arr3 = ArrayGenerator.generateRandomArray(n,n);
+//        SortingHelper.sortTest("quickSort",arr3);
+//
+//        Integer [] arr5 = ArrayGenerator.generateRandomArray(n,n);
+//        SortingHelper.sortTest("quickSort2",arr5);
+////
+//        Integer [] arr4 = ArrayGenerator.generateRandomArray(n,n);
+//        SortingHelper.sortTest("mergeSort4",arr4);
 
-        Integer [] arr5 = ArrayGenerator.generateRandomArray(n,n);
+
+        Integer [] arr5 = ArrayGenerator.generateOrderedArray(n);
         SortingHelper.sortTest("quickSort2",arr5);
 //
-        Integer [] arr4 = ArrayGenerator.generateRandomArray(n,n);
+        Integer [] arr4 = ArrayGenerator.generateOrderedArray(n);
         SortingHelper.sortTest("mergeSort4",arr4);
     }
 
@@ -58,15 +65,17 @@ public class QuickSort {
         sort(arr, p + 1 ,r);
     }
 
+    //如果partition可以開額外的空間的話
+
     private static <E extends Comparable> int partition(E[] arr, int l, int r){
 
         E value = arr[l];
 
         int j = l;
 
-        // arr[l + 1 .... j] < v
-        //arr[j + 1 ... i-1 ] >v
-
+        // arr[l + 1 .... j] < v 開區間
+        //arr[j + 1 ... i-1 ] >=v
+        //跑完下面的迴圈會的到上面的結果
         for(int i = l + 1 ; i <= r ; i++){
             if(arr[i].compareTo(value) < 0){
                 j++;
